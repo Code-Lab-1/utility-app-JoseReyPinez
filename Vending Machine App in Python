@@ -1,0 +1,60 @@
+##list for the items
+in_stock=[{'ID': "a1",'Name': 'Milky Way','Price': 2.5,},
+{'ID': "b2",'Name': 'Fanta','Price': 3.5,},
+{'ID': "c3",'Name': 'Kit Kat','Price': 3,},
+{'ID': "d4",'Name': 'Pepsi','Price': 3.5,},
+{'ID': "e5",'Name': 'Oreo','Price': 2.5, }],
+
+##loop to display items, prices, and their ids
+for x in in_stock:
+    print("Vending Machine in Python, Please enter the ID of the item you want to buy")
+for in_stock in x:
+    print(str(in_stock).replace("{","").replace("}", "").replace("'", "").replace(",","     "))
+
+##function to set money
+def set_money():
+    global money
+    money = int(input("Enter Cash: "))
+
+##main vending function
+def vending():
+    global buy_item
+    buy_item= input("Enter Product ID: ")
+    user_transaction(buy_item)
+    if buy_item == "a1":
+        print("Item Milky Way has been dispensed. Thank you for your purchse.")
+    if buy_item == "b2":
+        print("Item Fanta has been  dispensed. Thank you for your purchse.")
+    if buy_item == "c3":
+        print("Item Kit Kat has been  dispensed. Thank you for your purchse.")
+    if buy_item == "d4":
+        print("Item Pepsi has been  dispensed. Thank you for your purchse.")
+    if buy_item == "e5":
+        print("Item Oreo has been  dispensed. Thank you for your purchse.")
+
+##function fo correct change
+def purchase_item(money_to_buy):
+    global money
+    if money >= money_to_buy:
+        money -= money_to_buy
+        print(f"Transaction confirmed. Change will be",money,".")
+    else:
+        print("Not enough money.")
+
+#function for to check for user input
+def user_transaction(input):
+	if input == "a1":
+		purchase_item(2.5)
+	elif input == "b2":
+		purchase_item(3.5)
+	elif input == "c3":
+		purchase_item(3)
+	elif input == "d4":
+		purchase_item(3.5)
+	elif input == "e5":
+		purchase_item(2.5)
+	else:
+		print("Invalid Input. Please try again.")
+
+set_money()
+vending()
