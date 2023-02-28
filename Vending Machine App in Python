@@ -1,3 +1,5 @@
+run = True
+
 ##list for the items
 in_stock=[{'ID': "a1",'Name': 'Milky Way','Price': 2.5,},
 {'ID': "b2",'Name': 'Fanta','Price': 3.5,},
@@ -21,15 +23,15 @@ def vending():
     global buy_item
     buy_item= input("Enter Product ID: ")
     user_transaction(buy_item)
-    if buy_item == "a1":
+    if buy_item == "a1" and money >= 2.5:
         print("Item Milky Way has been dispensed. Thank you for your purchse.")
-    if buy_item == "b2":
+    if buy_item == "b2" and money >= 3.5:
         print("Item Fanta has been  dispensed. Thank you for your purchse.")
-    if buy_item == "c3":
+    if buy_item == "c3" and money >= 3:
         print("Item Kit Kat has been  dispensed. Thank you for your purchse.")
-    if buy_item == "d4":
+    if buy_item == "d4" and money >= 2.5:
         print("Item Pepsi has been  dispensed. Thank you for your purchse.")
-    if buy_item == "e5":
+    if buy_item == "e5" and money >= 2.5:
         print("Item Oreo has been  dispensed. Thank you for your purchse.")
 
 ##function fo correct change
@@ -39,7 +41,7 @@ def purchase_item(money_to_buy):
         money -= money_to_buy
         print(f"Transaction confirmed. Change will be",money,".")
     else:
-        print("Not enough money.")
+        print("Not enough money. Please insert more cash.")
 
 #function for to check for user input
 def user_transaction(input):
