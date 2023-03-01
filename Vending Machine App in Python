@@ -1,5 +1,3 @@
-run = True
-
 ##list for the items
 in_stock=[{'ID': "a1",'Name': 'Milky Way','Price': 2.5,},
 {'ID': "b2",'Name': 'Fanta','Price': 3.5,},
